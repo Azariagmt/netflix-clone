@@ -20,27 +20,26 @@ function Banner() {
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
-
+  console.log(movie);
   return (
     <header
       className="banner"
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url('https://xeraone.com/wp-content/uploads/Daredevil-Banner-1024x474.png')`,
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundPosition: "center center",
       }}
     >
       <div className="banner__contents">
-        <h1 className="banner__title">Movie Name</h1>
+        <h1 className="banner__title">
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
           <button className="banner__button">My List</button>
         </div>
         <h1 className="banner__description">
-          {truncate(
-            "This is a test description. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt non, eius eum aut architecto ab laborum voluptatem, dolorem sapiente in molestias ad sequi, velit deleniti corrupti beatae natus dignissimos. Fugit?",
-            150
-          )}
+          {truncate(movie?.overview, 150)}
         </h1>
       </div>
       <div className="banner--fadeButton"></div>
