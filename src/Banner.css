@@ -27,12 +27,12 @@
 }
 
 .banner--fadeButton {
-  height: 7.4rem;
+  height: 10.4rem;
   background-image: linear-gradient(
-    180deg,
+    to bottom,
     transparent,
-    rgba(37, 37, 37, 0.61),
-    #f111
+    rgba(48, 43, 43, 0.212),
+    rgba(0, 0, 0, 0.856)
   );
 }
 
